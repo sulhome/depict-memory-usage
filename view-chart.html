@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+
+	<script src="scripts/d3.v3.min.js"></script>
+	<script src="scripts/utils.js"></script>
+
+	<h2>Memory usage chart for leak example</h2>
+	<div id="leakChart"></div>
+	<hr/>
+	<h2>Memory usage chart for NONE leak example</h2>
+	<div id="noLeakChart"></div>
+	
+    <script>
+
+        var leakSvg = createSvg('leakChart');
+        drawChart(leakSvg, 'leak-data.json');
+        addXLable(leakSvg);
+        addYLable(leakSvg);
+
+        var noLeakSvg = createSvg('noLeakChart');
+        drawChart(noLeakSvg, 'no-leak-data.json');
+        addXLable(noLeakSvg);
+        addYLable(noLeakSvg);
+
+    </script>
+</body>
